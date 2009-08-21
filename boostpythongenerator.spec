@@ -1,7 +1,7 @@
 Name: boostpythongenerator
 Version: 0.2
-Release: %mkrel 1
-License: LGPLv2+
+Release: %mkrel 2
+License: GPLv2
 Summary:  Binding Generator utility that parses the headers for a given C/C++
 Group: Development/KDE and Qt
 URL: http://www.pyside.org
