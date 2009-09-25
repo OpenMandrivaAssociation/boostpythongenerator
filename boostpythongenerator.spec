@@ -47,7 +47,7 @@ Boostpythongenerator core lib.
 #------------------------------------------------------------------------------
 
 %package devel
-Summary: Devel stuff for boostpythongenerator.
+Summary: Devel stuff for boostpythongenerator
 Group: Development/KDE and Qt
 Requires: %{libgen} = %{version}
 Requires: apiextractor-devel >= 0.3
