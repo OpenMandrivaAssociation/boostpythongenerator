@@ -51,6 +51,7 @@ Summary: Devel stuff for boostpythongenerator.
 Group: Development/KDE and Qt
 Requires: %{libgen} = %{version}
 Requires: apiextractor-devel >= 0.3
+Requires: %name = %{version}
 
 %description devel
 Devel stuff for boostpythongenerator.
