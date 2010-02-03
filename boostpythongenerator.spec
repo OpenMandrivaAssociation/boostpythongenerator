@@ -1,18 +1,16 @@
 Name: boostpythongenerator
-Version: 0.3
+Version: 0.3.3
 Release: %mkrel 1
 License: GPLv2
 Summary:  Binding Generator utility that parses the headers for a given C/C++
 Group: Development/KDE and Qt
 URL: http://www.pyside.org
-Source0:  %name-%version.tar.bz2
-Patch0: boostpythongenerator-0.3-cmake-install-module.patch
+Source0:  http://www.pyside.org/files/%name-%version.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
-BuildRequires: boost-devel
-BuildRequires: apiextractor-devel >= 0.3
-BuildRequires: openssl-devel
+BuildRequires: apiextractor-devel >= 0.3.3
+BuildRequires: generatorrunner-devel >= 0.3.3
 
 %description
 The Binding Generator is a utility that parses the headers for a given C/C++
@@ -25,49 +23,13 @@ written.
 %files 
 %defattr(-,root,root,-)
 %_bindir/*
-
-#------------------------------------------------------------------------------
-
-%define libgen_major 0
-%define libgen %mklibname genrunner %{libgen_major}
-
-%package -n %{libgen}
-Summary: boostpythongenerator core lib
-Group: System/Libraries
-
-%description -n %{libgen}
-Boostpythongenerator core lib.
-
-%files -n %{libgen}
-%defattr(-,root,root)
-%{_libdir}/libgenrunner.so.%{libgen_major}*
-%{_libdir}/libqtdoc_generator.so
-%{_libdir}/libboostpython_generator.so
-
-#------------------------------------------------------------------------------
-
-%package devel
-Summary: Devel stuff for boostpythongenerator
-Group: Development/KDE and Qt
-Requires: %{libgen} = %{version}
-Requires: apiextractor-devel >= 0.3
-Requires: %name = %{version}
-
-%description devel
-Devel stuff for boostpythongenerator.
-
-%files devel
-%defattr(-,root,root)
-%{_includedir}/*
-%{_libdir}/libgenrunner.so
-%{_libdir}/pkgconfig/*
-%{_datadir}/cmake/Modules/*
+%_libdir/generatorrunner/*.so
+%_mandir/man1/boostpythongenerator.1.*
 
 #------------------------------------------------------------------------------
 
 %prep
 %setup -q
-%patch0 -p0 -b .orig
 
 %build
 %cmake
