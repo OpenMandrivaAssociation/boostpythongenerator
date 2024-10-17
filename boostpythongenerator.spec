@@ -4,7 +4,7 @@ Release: %mkrel 1
 License: GPLv2
 Summary:  Binding Generator utility that parses the headers for a given C/C++
 Group: Development/KDE and Qt
-URL: http://www.pyside.org
+URL: https://www.pyside.org
 Source0:  http://www.pyside.org/files/%name-%version.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
